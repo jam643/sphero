@@ -4,7 +4,6 @@ SpheroSensor.py - Sphero Sensor Handler
 ==================================================
 """
 import lib.handlers.handlerTemplates as handlerTemplates
-import logging
 
 class SpheroSensorHandler(handlerTemplates.SensorHandler):
     def __init__(self, executor, shared_data):
@@ -12,9 +11,7 @@ class SpheroSensorHandler(handlerTemplates.SensorHandler):
         
     def collision(self,initial=False):
         """
-        Use Sphero's internal collision detection
-
-        collision (bool): true if sphero has collided with something
+        Use Sphero's internal collision detection defined in InitHandler
         """
         if initial:
             self.SpheroInitHandler.collision = False
@@ -24,8 +21,7 @@ class SpheroSensorHandler(handlerTemplates.SensorHandler):
     def stopped(self,initial=False):
         """
         Use sphero's interal odometer to determine if Sphero is stationary
-
-        stopped (bool): true if sphero has stopped moving
+        defined in InitHandler
         """
         if initial:
             self.SpheroInitHandler.stopped = False

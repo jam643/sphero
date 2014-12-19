@@ -75,6 +75,7 @@ class SpheroActuatorHandler(handlerTemplates.ActuatorHandler):
         else:
             if actuatorVal:
                 self.angle += angle
+                #angle has to be 0-359
                 self.angle = self.angle%360
                 self.loco.sendCommand([0,self.angle])
             else:

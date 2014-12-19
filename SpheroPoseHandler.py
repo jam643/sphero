@@ -22,7 +22,7 @@ class SpheroPoseHandler(handlerTemplates.PoseHandler):
         """ Returns the most recent (x,y,theta) reading from sphero """
         self.x=self.SpheroInitHandler.data_info['ODOM_X']
         self.y=self.SpheroInitHandler.data_info['ODOM_Y']
-        return ([-self.x, self.y, self.angle])
+        return ([self.x, self.y, self.angle])
 
         
 
